@@ -162,7 +162,28 @@ var highLowTwo = testArr.reduce(function(objCounter, num) {
         
     }, {highest: -Infinity, lowest: Infinity, secondHighest: -Infinity, secondLowest: Infinity});
     
-console.log(highLowTwo); 
+// console.log(highLowTwo); 
+    
     
 //Exercise 8
 
+var testingString = "helloworld";
+
+function countChars(str) {
+    var splitStr = str.split("")
+    
+    return splitStr.reduce(function(obj, chars){
+        if (obj[chars]) {
+          obj[chars] += 1;
+        } 
+        else {
+          obj[chars] = 1; 
+        }
+        return obj;
+    }, {});
+}
+
+console.log(countChars(testingString));
+  
+
+    
