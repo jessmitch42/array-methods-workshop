@@ -106,7 +106,7 @@ function countVowels(stringToTest) {
     }, 0);
 }
 
-console.log(countVowels(testString2));
+// console.log(countVowels(testString2));
 
 /* exercise 6: Write a function called highLow that takes an array of numbers, and returns 
 an object with a property highest containing the highest number, and a property 
@@ -131,4 +131,38 @@ var highLow = testArr.reduce(function(objCounter, num) {
         
     }, {highest: -Infinity, lowest: Infinity});
 
-console.log(highLow);
+// console.log(highLow);
+
+// exercise 7: highest, second highest, lowest, second lowest
+
+var testArr = [-1, 3, 5, 67, 879, 4, 6, 999];
+
+
+var highLowTwo = testArr.reduce(function(objCounter, num) {
+        
+        if (num > objCounter.highest) {
+            objCounter.secondHighest = objCounter.highest
+            objCounter.highest = num;
+        }
+        
+        if (num < objCounter.highest && num > objCounter.secondHighest) {
+            objCounter.secondHighest = num;
+        }
+        
+        if (num < objCounter.lowest) {
+            objCounter.secondLowest = objCounter.lowest;
+            objCounter.lowest = num;
+        }
+        
+        if (num > objCounter.lowest && num < objCounter.secondLowest) {
+            objCounter.secondLowest = num;
+        }
+        
+    return objCounter;    
+        
+    }, {highest: -Infinity, lowest: Infinity, secondHighest: -Infinity, secondLowest: Infinity});
+    
+console.log(highLowTwo);
+    
+//Exercise 8
+
