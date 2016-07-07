@@ -41,12 +41,41 @@ NOTE: You are allowed to use Array.prototype.filter to answer this question.
 NOTE 2: This is a bit of a trick question, the answer is a one-liner :)
 */
 //Exercise 3
-var numArray = [1, 2, 3, -4, -3, -5, NaN, undefined];
+// var numArray = [1, 2, 3, -4, -3, -5, NaN, undefined];
 
-function fun1(num) {
-    return (num > 0);
-}
+// function fun1(num) {
+//     return (num > 0);
+// }
 
 function filterArray (arr, funfun) {return arr.filter(funfun);}
 
-console.log(filterArray(numArray, fun1));
+// console.log(filterArray(numArray, fun1));
+
+/* Exercise 4
+Write a function called longestWord that takes a string as argument, and 
+returns the longest word in the string. You should use Array.prototype.reduce 
+to do your work.
+
+Hint: You can use String.prototype.split to split the string into an array of 
+words.
+*/
+var testString = "I am a test string to pass through the function."
+
+
+function testingWordLength(word1, word2) {
+    if (word2.length > word1.length) {
+        return word2;
+    } else {
+        return word1;
+    }
+}
+
+function longestWord(stringToTest) {
+    var singleWords = stringToTest.split(" "); //singleWords is array of words in testString
+    
+    return singleWords.reduce(testingWordLength,"");
+}
+
+console.log(longestWord(testString));
+
+
