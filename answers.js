@@ -162,7 +162,7 @@ var highLowTwo = testArr.reduce(function(objCounter, num) {
         
     }, {highest: -Infinity, lowest: Infinity, secondHighest: -Infinity, secondLowest: Infinity});
     
-console.log(highLowTwo);
+console.log(highLowTwo); 
     
 //Exercise 8
 
