@@ -187,7 +187,7 @@ function countChars(str) {
 // console.log(countChars(testingString));
  
  
-//Exercise 9
+// //Exercise 9
 
 var personData = [
   {
@@ -219,4 +219,23 @@ function peopleById(arr) {
     return newObj;
 }
 
-console.log(peopleById(personData));
+// console.log(peopleById(personData)); 
+
+//exercise 10 
+
+function peopleByFirstName(arr) {
+    
+    var newFirstNameObj = arr.reduce(function(obj, personObj){
+          if(!obj[personObj.firstName]) {
+              obj[personObj.firstName] = [];
+              obj[personObj.firstName].push(personObj)
+          }
+          else {
+              obj[personObj.firstName].push(personObj)
+          }
+        return obj;
+    }, {});
+    return newFirstNameObj;
+}
+
+console.log(peopleByFirstName(personData));
