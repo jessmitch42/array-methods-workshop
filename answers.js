@@ -174,7 +174,8 @@ function countChars(str) {
     
     return splitStr.reduce(function(obj, chars){
         if (obj[chars]) {
-          obj[chars] += 1;
+          obj[chars] = obj[chars] + 1;
+          
         } 
         else {
           obj[chars] = 1; 
@@ -183,7 +184,39 @@ function countChars(str) {
     }, {});
 }
 
-console.log(countChars(testingString));
-  
+// console.log(countChars(testingString));
+ 
+ 
+//Exercise 9
 
+var personData = [
+  {
+    "id": "KeXoYg92is",
+    "firstName": "John",
+    "lastName": "Smith",
+    "email": "john@smith.com"
+  },
+  {
+    "id": "NkALmSWtUp",
+    "firstName": "Donald",
+    "lastName": "Duck",
+    "email": "don@disney.com"
+  },
+  {
+    "id": "m7LPbJYSUg",
+    "firstName": "John",
+    "lastName": "Vader",
+    "email": "vader@darkside.com"
+  }
+]
     
+function peopleById(arr) {
+    
+    var newObj = arr.reduce(function(obj, property){
+          obj[property.id] = property; 
+        return obj;
+    }, {});
+    return newObj;
+}
+
+console.log(peopleById(personData));
